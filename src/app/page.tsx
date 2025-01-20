@@ -12,6 +12,7 @@
 
 "use client";
 
+import LinkAccountButton from "@/components/link-account-button";
 import { Button } from "@/components/ui/button";
 import { SignIn, SignUp, useUser } from "@clerk/nextjs";
 
@@ -29,5 +30,5 @@ export default function Home() {
   
   
 
-  return <Button>Hello </Button>;
+  return <LinkAccountButton></LinkAccountButton>;
 }
