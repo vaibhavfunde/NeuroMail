@@ -16,6 +16,7 @@ import LinkAccountButton from "@/components/link-account-button";
 import { Button } from "@/components/ui/button";
 import { SignIn, SignUp, useUser } from "@clerk/nextjs";
 
+
 export default function Home() {
 
   const { user } = useUser();

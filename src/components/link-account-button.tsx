@@ -3,15 +3,15 @@
 import React from "react"
 import { Button } from "@/components/ui/button";
 
-import { getAurinkoAuthUrl } from "@/lib/aurinko"
+import { getAurinkoAuthorizationUrl } from "@/lib/aurinko"
 
 const LinkAccountButton = () => {
     return (
         <Button onClick={async () => {
-            const authUrl = await getAurinkoAuthUrl('Google');
-            console.log(authUrl);
+            const authUrl = await getAurinkoAuthorizationUrl('Google');
+            console.log("authUrl:", authUrl);
         }}>
-            Link Account
+            Link Account12
         </Button>
         
     )
