@@ -8,7 +8,7 @@ import { getAurinkoAuthorizationUrl } from "@/lib/aurinko"
 const LinkAccountButton = () => {
     return (
         <Button onClick={async () => {
-            const authUrl = await getAurinkoAuthorizationUrl('Office365');
+            const authUrl = await getAurinkoAuthorizationUrl('Google');
             // console.log("authUrl:", authUrl);
             window.location.href = authUrl;
         }}>

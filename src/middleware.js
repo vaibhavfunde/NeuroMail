@@ -30,7 +30,7 @@ const isPublicRoute = createRouteMatcher([
   '/sign-in(.*)',
   '/sign-up(.*)',
   '/api/webhooks(.*)',
-  // '/api/initial-sync(.*)',
+  '/api/initial-sync(.*)',
   // '/api/aurinko/webhook(.*)',
   // '/api/stripe(.*)',
   // '/privacy',

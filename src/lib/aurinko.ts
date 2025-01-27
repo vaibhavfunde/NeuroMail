@@ -25,7 +25,7 @@ export const getAurinkoAuthorizationUrl = async (serviceType: 'Google' | 'Office
         // });
         const params = new URLSearchParams({
             clientId: process.env.AURINKO_CLIENT_ID || '',
-            serviceType, // or 'Office365'
+            serviceType:"Office365", // or 'Office365'
 
             scopes: 'Mail.Read Mail.ReadWrite Mail.Send Mail.Drafts Mail.All',
             responseType: 'code',
