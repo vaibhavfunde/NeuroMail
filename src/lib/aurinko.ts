@@ -25,7 +25,7 @@ export const getAurinkoAuthorizationUrl = async (serviceType: 'Google' | 'Office
         // });
         const params = new URLSearchParams({
             clientId: process.env.AURINKO_CLIENT_ID || '',
-            serviceType: 'Office365', // or 'Office365'
+            serviceType, // or 'Office365'
 
             scopes: 'Mail.Read Mail.ReadWrite Mail.Send Mail.Drafts Mail.All',
             responseType: 'code',
@@ -41,114 +41,9 @@ export const getAurinkoAuthorizationUrl = async (serviceType: 'Google' | 'Office
 
 
 
-// export const exchangeCodeForAccessToken = async (code: string) => {
-//    try {
-//     // const response =await axios.post(`https://api.aurinko.io/api/auth/token{code}`, {
-//     //     code: code,  // Send code in the body
-//     //     grant_type: 'authorization_code',
-//     //     redirect_uri: `${process.env.NEXT_PUBLIC_URL}/api/aurinko/callback`,
-//     // }, {
-//     //     auth: {
-//     //         username: process.env.AURINKO_CLIENT_ID,
-//     //         password: process.env.AURINKO_CLIENT_SECRET,
-//     //     },
-//     // })
-//     const url = `https://api.aurinko.io/v1/auth/token/${code}`;
-//     console.log('Requesting token from:', url);
-//     const response = await axios.post(`https://api.aurinko.io/api/auth/token/${code}`, {
-//         }, {
-//         auth: {
-//             username: process.env.AURINKO_CLIENT_ID || '',
-//             password: process.env.AURINKO_CLIENT_SECRET || '',
-//         },
-//     });
-    
-//     return response.data as { 
-//         accountId: number,
-//         accessToken: string, 
-//         userId:string,
-//         userSession:string,
-//         }
-    
-//    } catch (error) {
-//     if (axios.isAxiosError(error)) {
-//         console.error('Error fetching Aurinko token:', error.response?.data);
-//     } else {
-//         console.error('Unexpected error fetching Aurinko token:', error);
-//     }
-//    }
-// }
-
-// export const exchangeCodeForAccessToken = async (code: string) => {
-//     try {
-//         const url = 'https://api.aurinko.io/v1/auth/token';
-//         console.log('Requesting token from:', url);
-
-//         const response = await axios.post(url, {
-//      }, {
-//             auth: {
-//                 username: process.env.AURINKO_CLIENT_ID || '',
-//                 password: process.env.AURINKO_CLIENT_SECRET || '',
-//             },
-//         });
-
-//         return response.data as {
-//             accountId: number,
-//             accessToken: string,
-//             userId: string,
-//             userSession: string,
-//         };
-//     } catch (error) {
-//         if (axios.isAxiosError(error)) {
-//             console.error('Error fetching Aurinko token:', error.response?.data);
-//         } else {
-//             console.error('Unexpected error fetching Aurinko token:', error);
-//         }
-//     }
-// };
 
 
 
-
-// export const exchangeCodeForAccessToken = async (code: string) => { 
-//   try {
-//     const url = `https://api.aurinko.io/v1/auth/token`;
-
-//     console.log('Requesting token from:', url);
-
-//     const response = await axios.post(
-//       url, 
-//       {
-//         code: code,  // Send code in the body
-//         grant_type: 'authorization_code',
-//         redirect_uri: `${process.env.NEXT_PUBLIC_URL}/api/aurinko/callback`,
-//       }, 
-//       {
-//         auth: {
-//           username: process.env.AURINKO_CLIENT_ID || '',
-//           password: process.env.AURINKO_CLIENT_SECRET || '',
-//         },
-//         headers: {
-//           'Content-Type': 'application/json',
-//         },
-//       }
-//     );
-
-//     return response.data as { 
-//       accountId: number;
-//       accessToken: string; 
-//       userId: string;
-//       userSession: string;
-//     };
-//   } catch (error) {
-//     if (axios.isAxiosError(error)) {
-//       console.error('Error fetching Aurinko token:', error.response?.data || error.message);
-//     } else {
-//       console.error('Unexpected error fetching Aurinko token:', error);
-//     }
-//     return null;
-//   }
-// };
 
 export const getAurinkoToken = async (code: string) => {
     try {
